@@ -10,7 +10,7 @@ class Directory extends React.Component{
                   title: 'hats',
                   imageUrl: 'https://media.tenor.com/images/b268608343797c9610bccd4585feaf55/tenor.gif',
                   id: 1,
-                  linkUrl: 'shop/hats'
+                  linkUrl: '/shop/hats'
                 },
                 {
                   title: 'jackets',
