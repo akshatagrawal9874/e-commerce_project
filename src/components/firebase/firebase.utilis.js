@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 
-var config = {
+var myconfig = {
     apiKey: "AIzaSyCoPXzokR_oo1ZdU8OM1Gjq7dEKtoHUbDo",
     authDomain: "ecommerce-beffd.firebaseapp.com",
     databaseURL: "https://ecommerce-beffd.firebaseio.com",
@@ -12,7 +12,7 @@ var config = {
     appId: "1:652362237742:web:91244e963261879fba5cbf",
     measurementId: "G-8KTE4JCXV2"
 };
-firebase.initializeApp(config)
+firebase.initializeApp(myconfig)
  export const auth =firebase.auth();
  export const firestore=firebase.firestore();
 

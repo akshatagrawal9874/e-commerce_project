@@ -20,7 +20,7 @@ class Register extends React.Component{
            password:"",
        })
     }
-    handleChange(e){
+    handleChange=(e)=>{
         const {name,value}=e.target;
         this.setState({
             [name]:value
@@ -34,17 +34,20 @@ class Register extends React.Component{
                   label="Display Name"
                   handleChange={this.handleChange}
                   value={this.state.name}
-                  type="text"/>
+                  type="text"
+                  required/>
                   <FormInput name="email"
                   label="Email"
                   handleChange={this.handleChange}
                   value={this.state.email}
-                  type="email"/>
+                  type="email"
+                  required/>
                   <FormInput name="password"
                   label="Password"
                   handleChange={this.handleChange}
                   value={this.state.password}
-                  type="password"/>
+                  type="password"
+                  required/>
                   <Button type="submit">Register Now</Button>
                 </form>
             </div>
