@@ -5,8 +5,9 @@ import {Route,Switch,BrowserRouter as Router} from "react-router-dom"
 import Header from "./pages/header/header"
 import SignInSignOut from "./pages/Sign_in&Sign_out/sign_in&sign_out"
 import ShopPage from "./pages/Shop-page/shop-page"
-import {auth} from "./components/firebase/firebase.utilis"
-const Hats=(props)=>{
+import {auth , UserProfile} from "./components/firebase/firebase.utilis"
+const Hats=(props)=>
+{
    console.log(props);
    return(
    <h1>HATS</h1>)
@@ -15,16 +16,28 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      currentUser:null
+      currentUser:""
     }
   }
    unsubscribeFromAuth=null;
   componentDidMount(){
-   this.unsubscribeFromAuth=auth.onAuthStateChanged(user=>{
+   this.unsubscribeFromAuth=auth.onAuthStateChanged(async user=>{
+     if(user)
+     {
+       const userRef = await UserProfile(user);
+       userRef.onSnapshot(snapShot=>{
+         this.setState({
+           currentUser:{
+             id:snapShot.id,
+             ...snapShot.data()
+           }
+         })
+         console.log(this.state.currentUser);
+       })
+     }
      this.setState({
        currentUser:user
      })
-     console.log(user);
    })
   }
   componentWillUnmount(){//used for sign out in firebase app
