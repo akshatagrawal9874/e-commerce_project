@@ -25,7 +25,7 @@ class Register extends React.Component{
            return;
        }
        try{
-       const {user} =await auth.createUserWithEmailAndPassword(email,password);
+       const {user} =await auth.createUserWithEmailAndPassword(email,password);       
        await UserProfile(user,{displayName});
        this.setState({
         displayName:"",

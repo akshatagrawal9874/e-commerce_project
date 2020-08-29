@@ -23,6 +23,7 @@ firebase.initializeApp(myconfig)
 
     if(!snapShot.exists)
     {
+        console.log(userAuth);
         const {displayName,email}=userAuth;
         const createdAt = new Date();
         try{
