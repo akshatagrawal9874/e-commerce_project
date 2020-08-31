@@ -14,8 +14,10 @@
 
   .item-count {
     position: absolute;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     bottom: 12px;
+    background: -webkit-linear-gradient(purple, white);
+    -webkit-background-clip: text;
   }
 }
